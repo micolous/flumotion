@@ -199,6 +199,7 @@ flumotion/component/producers/Makefile
 flumotion/component/producers/audiotest/Makefile
 flumotion/component/producers/bttv/Makefile
 flumotion/component/producers/blackmagic/Makefile
+flumotion/component/producers/dvsource/Makefile
 flumotion/component/producers/firewire/Makefile
 flumotion/component/producers/fgdp/Makefile
 flumotion/component/producers/icecast/Makefile
