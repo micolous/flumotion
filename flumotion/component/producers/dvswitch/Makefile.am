@@ -1,6 +1,6 @@
 include $(top_srcdir)/common/python.mk
 
-componentdir = $(libdir)/flumotion/python/flumotion/component/producers/dvsource
+componentdir = $(libdir)/flumotion/python/flumotion/component/producers/dvswitch
 component_DATA = 		\
 	dvswitch.xml
 
