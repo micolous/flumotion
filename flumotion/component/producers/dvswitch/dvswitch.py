@@ -52,7 +52,8 @@ class DVSwitch(feedcomponent.ParseLaunchComponent):
     def check_properties(self, props, addMessage):
         deintMode = props.get('deinterlace-mode', 'auto')
         deintMethod = props.get('deinterlace-method', 'ffmpeg')
-        fileName = props.get('filename', None)
+        hostname = props.get('hostname', 'localhost')
+        port = props.get('port', 5000)
 
         if deintMode not in deinterlace.DEINTERLACE_MODE:
             msg = messages.Error(T_(N_("Configuration error: '%s' " \
@@ -68,14 +69,14 @@ class DVSwitch(feedcomponent.ParseLaunchComponent):
             addMessage(msg)
             raise errors.ConfigError(msg)
 
-        # TODO: implement better checks here.
-        if not filename:
-            msg = messages.Error(T_(N_("Configuration error: '%s' " \
-                "is not a valid filename." % fileName)))
-            self.debug("'%s' is not a valid filename",
-                fileName)
-            addMessage(msg)
-            raise errors.ConfigError(msg)
+        # TODO: implement error checking for hostname and port.
+        #if not hostname:
+        #    msg = messages.Error(T_(N_("Configuration error: '%s' " \
+        #        "is not a valid filename." % fileName)))
+        #    self.debug("'%s' is not a valid filename",
+        #        fileName)
+        #    addMessage(msg)
+        #    raise errors.ConfigError(msg)
 
     def _checkCallback(self, results):
         for (state, result) in results:
